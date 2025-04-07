@@ -1,0 +1,132 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2821
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Avenir-Roman;\f2\fnil\fcharset0 Avenir-Black;
+\f3\fswiss\fcharset0 Helvetica-BoldOblique;\f4\froman\fcharset0 Times-Roman;}
+{\colortbl;\red255\green255\blue255;\red24\green25\blue26;\red255\green255\blue255;\red50\green28\blue147;
+\red11\green86\blue1;\red0\green0\blue0;\red0\green0\blue255;\red15\green112\blue1;\red144\green1\blue18;
+\red109\green109\blue109;}
+{\*\expandedcolortbl;;\cssrgb\c12549\c12941\c13333;\cssrgb\c100000\c100000\c100000;\cssrgb\c25882\c19216\c64314;
+\cssrgb\c0\c40000\c0;\cssrgb\c0\c0\c0;\cssrgb\c0\c0\c100000;\cssrgb\c0\c50196\c0;\cssrgb\c63922\c8235\c8235;
+\cssrgb\c50196\c50196\c50196;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}}{\leveltext\leveltemplateid1\'01\'00;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sa320\qj\partightenfactor0
+
+\f0\fs46 \AppleTypeServices\AppleTypeServicesF65539 \cf2 \cb3 \expnd0\expndtw0\kerning0
+Este trabalho pr\'e1tico tem por finalidade a implementa\'e7\'e3o, em C, de algoritmo para leitura e manipula\'e7\'e3o de dados formatados de um arquivo texto (csv).
+\f1 \AppleTypeServices\AppleTypeServicesF65539 \cb1 \
+\pard\pardeftab720\sa420\qj\partightenfactor0
+
+\f2\b\fs48\fsmilli24333 \AppleTypeServices\AppleTypeServicesF65539 \cf4 \cb3 Formato dos dados:\cb1 \
+\pard\pardeftab720\sa320\qj\partightenfactor0
+
+\f0\b0\fs46 \AppleTypeServices\AppleTypeServicesF65539 \cf2 \cb3 No arquivo 
+\f3\i\b \AppleTypeServices\AppleTypeServicesF65539 \cf5 processo_043_202409032338
+\f0\i0\b0 \AppleTypeServices\AppleTypeServicesF65539 \cf2 , cada linha (com exce\'e7\'e3o da primeira) cont\'e9m dados relacionados a processos que tramitam na justi\'e7a eleitoral de uma unidade da federa\'e7\'e3o e que incluem os campos id (identificador), numero (n\'famero do processo), data_ajuizamento (data em que o processo foi iniciado), id_classe (classe vinculada ao processo), id_assunto (assunto vinculado ao processo) e ano_eleicao (ano da elei\'e7\'e3o que ensejou a abertura do processo). A seguir, observe que os atributos s\'e3o separados por v\'edrgula:
+\f1 \AppleTypeServices\AppleTypeServicesF65539 \cb1 \
+\pard\pardeftab720\li1134\fi-1135\partightenfactor0
+
+\f4\fs40\fsmilli20333 \AppleTypeServices\AppleTypeServicesF65539 \cf2 \cb3 "id",\cf7 "numero",\cf2 "data_ajuizamento",\cf8 "id_classe",\cf9 "id_assunto",\cf10 "ano_eleicao"
+\f1\fs46 \AppleTypeServices\AppleTypeServicesF65539 \cf2 \
+
+\f4\fs40\fsmilli20333 \AppleTypeServices\AppleTypeServicesF65539 638633058,\cf7 "00000103020166070018",\cf2 2016-04-20 15:03:40.000,\cf8 \{12554\},\cf9 \{11778\},\cf10 0
+\f1\fs46 \AppleTypeServices\AppleTypeServicesF65539 \cf2 \
+
+\f4\fs40\fsmilli20333 \AppleTypeServices\AppleTypeServicesF65539 405287812,\cf7 "06000824620216070000",\cf2 2021-07-01 16:33:15.000,\cf8 \{12377\},\cf9 \{11778\},\cf10 2020
+\f1\fs46 \AppleTypeServices\AppleTypeServicesF65539 \cf2 \
+
+\f4\fs40\fsmilli20333 \AppleTypeServices\AppleTypeServicesF65539 405277919,\cf7 "00000238420156070011",\cf2 2015-05-18 16:49:33.000,\cf8 \{11541\},\cf9 \{11778\},\cf10 0
+\f1\fs46 \AppleTypeServices\AppleTypeServicesF65539 \cf2 \
+\pard\pardeftab720\sa420\qj\partightenfactor0
+
+\f2\b\fs48\fsmilli24333 \AppleTypeServices\AppleTypeServicesF65539 \cf4 O que deve ser feito:\cb1 \
+\pard\pardeftab720\sa320\qj\partightenfactor0
+
+\f0\b0\fs46 \AppleTypeServices\AppleTypeServicesF65539 \cf2 \cb3 O programa a ser constru\'eddo deve ler dados de cada processo, identificando cada um dos atributos acima para, a seguir, realizar as seguintes opera\'e7\'f5es:
+\f1 \AppleTypeServices\AppleTypeServicesF65539 \cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\qj\partightenfactor0
+\ls1\ilvl0
+\f0 \AppleTypeServices\AppleTypeServicesF65539 \cf2 \cb3 \kerning1\expnd0\expndtw0 {\listtext	1	}\expnd0\expndtw0\kerning0
+Ordenar, em ordem crescente, o conjunto de dados a partir do atributo \'93id\'94;
+\f1 \AppleTypeServices\AppleTypeServicesF65539 \cb1 \
+\ls1\ilvl0
+\f0 \AppleTypeServices\AppleTypeServicesF65539 \cb3 \kerning1\expnd0\expndtw0 {\listtext	2	}\expnd0\expndtw0\kerning0
+Ordenar, em ordem decrescente, o conjunto de dados a partir do atributo \'93data_ajuizamento\'94;
+\f1 \AppleTypeServices\AppleTypeServicesF65539 \cb1 \
+\ls1\ilvl0
+\f0 \AppleTypeServices\AppleTypeServicesF65539 \cb3 \kerning1\expnd0\expndtw0 {\listtext	3	}\expnd0\expndtw0\kerning0
+Contar quantos processos est\'e3o vinculados a um determinado \'93id_classe\'94;
+\f1 \AppleTypeServices\AppleTypeServicesF65539 \cb1 \
+\ls1\ilvl0
+\f0 \AppleTypeServices\AppleTypeServicesF65539 \cb3 \kerning1\expnd0\expndtw0 {\listtext	4	}\expnd0\expndtw0\kerning0
+Identificar quantos \'93id_assuntos\'94 constam nos processos presentes na base de dados;
+\f1 \AppleTypeServices\AppleTypeServicesF65539 \cb1 \
+\ls1\ilvl0
+\f0 \AppleTypeServices\AppleTypeServicesF65539 \cb3 \kerning1\expnd0\expndtw0 {\listtext	5	}\expnd0\expndtw0\kerning0
+Listar todos os processos que est\'e3o vinculados a mais de um assunto; e
+\f1 \AppleTypeServices\AppleTypeServicesF65539 \cb1 \
+\ls1\ilvl0
+\f0 \AppleTypeServices\AppleTypeServicesF65539 \cb3 \kerning1\expnd0\expndtw0 {\listtext	6	}\expnd0\expndtw0\kerning0
+Indicar a quantos dias um processo est\'e1 em tramita\'e7\'e3o na justi\'e7a.
+\f1 \AppleTypeServices\AppleTypeServicesF65539 \cb1 \
+\pard\pardeftab720\sa420\qj\partightenfactor0
+
+\f2\b\fs48\fsmilli24333 \AppleTypeServices\AppleTypeServicesF65539 \cf4 \cb3 Observa\'e7\'f5es:\cb1 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\qj\partightenfactor0
+\ls2\ilvl0
+\f0\b0\fs46 \AppleTypeServices\AppleTypeServicesF65539 \cf2 \cb3 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+Deve ser implementado o Tipo Abstrato de Dados (TAD) \'93Processo\'94, seguindo diretrizes dadas em aula.
+\f1 \AppleTypeServices\AppleTypeServicesF65539 \cb1 \
+\ls2\ilvl0
+\f0 \AppleTypeServices\AppleTypeServicesF65539 \cb3 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+O c\'f3digo-fonte deve ser estruturado em tr\'eas arquivos, conforme explicitado na aula TAD.
+\f1 \AppleTypeServices\AppleTypeServicesF65539 \cb1 \
+\ls2\ilvl0
+\f0 \AppleTypeServices\AppleTypeServicesF65539 \cb3 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+Os dados devem ser organizados em vetores de structs.
+\f1 \AppleTypeServices\AppleTypeServicesF65539 \cb1 \
+\ls2\ilvl0
+\f0 \AppleTypeServices\AppleTypeServicesF65539 \cb3 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+Os atributos s\'e3o separados por v\'edrgula.
+\f1 \AppleTypeServices\AppleTypeServicesF65539 \cb1 \
+\ls2\ilvl0
+\f0 \AppleTypeServices\AppleTypeServicesF65539 \cb3 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+N\'e3o podem ser usadas fun\'e7\'f5es de bibliotecas C para pesquisar e ordenar o conjunto.
+\f1 \AppleTypeServices\AppleTypeServicesF65539 \cb1 \
+\ls2\ilvl0
+\f0 \AppleTypeServices\AppleTypeServicesF65539 \cb3 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+Os atributos multivalorados multivalorados est\'e3o delimitados por \'93\{\}\'94.
+\f1 \AppleTypeServices\AppleTypeServicesF65539 \cb1 \
+\ls2\ilvl0
+\f0 \AppleTypeServices\AppleTypeServicesF65539 \cb3 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+As respostas dos itens 1 e 2 devem ser armazenados em arquivo \'93cvs\'94, mantendo cabe\'e7alho.
+\f1 \AppleTypeServices\AppleTypeServicesF65539 \cb1 \
+\ls2\ilvl0
+\f0 \AppleTypeServices\AppleTypeServicesF65539 \cb3 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+Deve ser implementada 1 (uma) fun\'e7\'e3o para resolver cada item indicado acima.
+\f1 \AppleTypeServices\AppleTypeServicesF65539 \cb1 \
+\ls2\ilvl0
+\f0 \AppleTypeServices\AppleTypeServicesF65539 \cb3 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+O c\'f3digo-fonte deve ser modularizado em tr\'eas arquivos, conforme indicado nas aulas de agosto/2024.
+\f1 \AppleTypeServices\AppleTypeServicesF65539 \cb1 \
+\ls2\ilvl0
+\f0 \AppleTypeServices\AppleTypeServicesF65539 \cb3 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+Este trabalho pr\'e1tico pode ser desenvolvido em grupos de at\'e9 5 integrantes e vale 2,5 pontos.
+\f1 \AppleTypeServices\AppleTypeServicesF65539 \cb1 \
+\ls2\ilvl0
+\f0 \AppleTypeServices\AppleTypeServicesF65539 \cb3 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+Caso seja entregue com atraso, o valor total passar\'e1 a ser, para n dias de atraso, .
+\f1 \AppleTypeServices\AppleTypeServicesF65539 \cb1 \
+\ls2\ilvl0
+\f0 \AppleTypeServices\AppleTypeServicesF65539 \cb3 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+O c\'f3digo-fonte deve ser enviado pelo AVA e disponibilizado no Git.
+\f1 \AppleTypeServices\AppleTypeServicesF65539 \cb1 \
+\ls2\ilvl0
+\f0 \AppleTypeServices\AppleTypeServicesF65539 \cb3 \kerning1\expnd0\expndtw0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+Trabalhos iguais ou com se\'e7\'f5es iguais/parecidos ter\'e3o nota 0.
+\f1 \AppleTypeServices\AppleTypeServicesF65539 \cb1 \
+\pard\pardeftab720\partightenfactor0
+
+\f0 \AppleTypeServices\AppleTypeServicesF65539 \cf2 \cb3 Na biblioteca string.h existem fun\'e7\'f5es para manipula\'e7\'e3o de strings que podem ser \'fateis.}
